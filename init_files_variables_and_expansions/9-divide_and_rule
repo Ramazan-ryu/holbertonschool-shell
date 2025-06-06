@@ -1,0 +1,3 @@
+#!/bin/bash
+export POWER=100
+export DIVIDE=4
