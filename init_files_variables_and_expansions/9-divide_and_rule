@@ -1,2 +1,2 @@
 #!/bin/bash
-export|echo $( POWER / DIVIDE )
+echo $( POWER="42784" / DIVIDE="32" )
