@@ -1,3 +1,2 @@
 #!/bin/bash
-export POWER=100
-export DIVIDE=4
+export POWER=100|export DIVIDE=4
