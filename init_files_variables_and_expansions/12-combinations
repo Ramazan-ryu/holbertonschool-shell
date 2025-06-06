@@ -1,2 +1,2 @@
 #!/bin/bash
-for i in {a..z};do for j in {a..z};do if [ $i$j != oo ];then echo $i$j;fi;done;done
+for i in {a..z} {a..n}p{a..z} q{a..z} r{a..z} s{a..z} t{a..z} u{a..z} v{a..z} w{a..z} x{a..z} y{a..z} z{a..z};do echo $i;done
