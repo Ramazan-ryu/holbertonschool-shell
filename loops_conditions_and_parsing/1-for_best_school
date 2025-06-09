@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-Best School
-Best School
-Best School
-Best School
-Best School
-Best School
-Best School
-Best School
-Best School
-Best School
+for i in range (10) :
+	print ("Best School")
