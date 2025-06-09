@@ -1,0 +1,12 @@
+#!/usr/bin/env  bash 
+#
+smt=0
+while [ $smt -lt 10 ]
+do
+  if [ $smt == 9 ]
+  then
+    echo "Hi"
+  fi
+  echo "Best School"
+  (( smt++ ))
+done
