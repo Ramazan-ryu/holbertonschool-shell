@@ -1,0 +1,19 @@
+#!/usr/bin/env bash 
+#
+smt=1
+while [ $smt -lt 20 ]
+do
+	echo "$smt"
+        case "$smt" in
+    4)
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "bad luck from Italy"
+      ;;
+  esac
+  ((smt++ ))
+done
