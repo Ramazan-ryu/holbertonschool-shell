@@ -1,0 +1,16 @@
+#!/usr/bin/env bash 
+#
+smt=0
+while [ $smt -lt 10 ]
+do
+	if [ $smt == 4 ]
+	then
+		echo "bad luck"
+	elif [ $smt == 8 ]
+	then
+		echo "good luck"
+	else
+	      	echo "Best School"
+	fi
+	       	((smt++ ))
+done
