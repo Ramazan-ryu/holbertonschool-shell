@@ -3,10 +3,10 @@
 smt=0
 while [ $smt -lt 10 ]
 do
-	if [ $smt == 4 ]
+	if [ $smt == 3 ]
 	then
 		echo "bad luck"
-	elif [ $smt == 8 ]
+	elif [ $smt == 7 ]
 	then
 		echo "good luck"
 	else
