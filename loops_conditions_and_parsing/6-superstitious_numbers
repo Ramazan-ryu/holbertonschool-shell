@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 #
 smt=0
-while [ $smt -lt 20 ]
+while [ $smt -lt 21 ]
 do
 	echo "$smt"
         case "$smt" in
