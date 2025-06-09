@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 #
-smt=0
+smt=1
 while [ $smt -lt 21 ]
 do
 	echo "$smt"
