@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 #
-if [ ! -f "/etc/passwd" ]; then
-    echo "Error: The /etc/passwd file was not found. Cannot tell the user stories."
-    exit 1
-fi
-echo "--- Tales from the Passwd File ---"
-echo "Gather 'round, and hear the stories of our system's inhabitants!"
-echo "---------------------------------------------------"
-while IFS=: read -r username password_placeholder uid gid user_info home_directory shell; do
-    printf "The user \033[1;34m%-15s\033[0m is part of the \033[1;32m%s\033[0m gang, lives in \033[1;36m%s\033[0m and rides \033[1;35m%s\033[0m.\n" \
-           "$username" "$gid" "$home_directory" "$shell"
-    printf "User \033[1;34m%s\033[0m (ID: \033[1;33m%s\033[0m)'s place is protected by the passcode \033[1;31m%s\033[0m, more info about the user here: \033[0;37m%s\033[0m\n" \
-           "$username" "$uid" "$password_placeholder" "$user_info"
-    echo "---------------------------------------------------"
+while IFS=':' read -r username password uid gid info home shell; do
+    echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $username's place (user ID $uid) is protected by the passcode $password, more info about the user here: $info"
 done < /etc/passwd
-echo "--- End of Tales ---"
