@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 #
 for file in *; do
-  # Check if the file name contains a dash
   if [[ "$file" == *-* ]]; then
-    # Extract and print the part after the first dash
     echo "${file#*-}"
   fi
 done
