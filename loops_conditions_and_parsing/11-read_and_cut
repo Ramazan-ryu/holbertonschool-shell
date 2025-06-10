@@ -5,7 +5,7 @@ if [ ! -f "/etc/passwd" ]; then
     exit 1
 fi
 echo "--- User Information from /etc/passwd ---"
-echo "Username           User ID           Home Directory"
+echo "username           user id           Home directory path for the user"
 echo "---------------------------------------------------"
 while IFS=: read -r username _ uid _ _ home_directory _; do
     printf "%-18s %-15s %s\n" "$username" "$uid" "$home_directory"
