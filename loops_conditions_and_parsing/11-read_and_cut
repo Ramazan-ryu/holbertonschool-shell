@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+if [ ! -f "/etc/passwd" ]; then
+    echo "Error: /etc/passwd file not found."
+    exit 1
+fi
+echo "--- User Information from /etc/passwd ---"
+echo "Username           User ID           Home Directory"
+echo "---------------------------------------------------"
+while IFS=: read -r username _ uid _ _ home_directory _; do
+    printf "%-18s %-15s %s\n" "$username" "$uid" "$home_directory"
+done < /etc/passwd
+echo "---------------------------------------------------"
