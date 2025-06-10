@@ -1,0 +1,16 @@
+#!/usr/bin/bash bash
+#
+faylik="school"
+if [ -e "$faylik" ]; then
+    echo "school file exists"
+        if [ ! -s "$faylik" ]; then
+        echo "school file is empty"
+    else
+        echo "school file is not empty"
+    fi
+    if [ -f "$faylik" ]; then
+        echo "school is a regular file"
+    fi
+else
+    echo "school file does not exist"
+fi
