@@ -1,4 +1,4 @@
-#!/usr/bin/bash bash
+#!/usr/bin/env bash
 #
 faylik="school"
 if [ -e "$faylik" ]; then
