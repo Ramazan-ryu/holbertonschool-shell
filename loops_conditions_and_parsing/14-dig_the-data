@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 #
 awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
+
+#awk '{ print $1 " " $9}' apache-access.log — extracts the first ($1, usually the client IP address) and the ninth ($9, usually the server HTTP response code) columns from the apache-access.log log file.
+#This data is output line by line in the format: IP STATUS_CODE (e.g. 192.168.1.1 200).
+#The sort command sorts the lines alphabetically so that identical lines are next to each other.
+#uniq -c counts the number of repetitions of each unique line (i.e. how many times a certain IP received a certain HTTP code).
+#The final sort -rn sorts the resulting lines by the number of repetitions in reverse order (from the most frequent to the rarest).
