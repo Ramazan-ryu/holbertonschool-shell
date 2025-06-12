@@ -1,2 +1,35 @@
 #!/usr/bin/env bash
 #
+# Path to the main script
+PROCESS_SCRIPT="./manage_my_process"
+# PID file
+PID_FILE="/var/run/my_process.pid"
+case "$1" in
+    start)
+        $PROCESS_SCRIPT &
+        echo $! > "$PID_FILE"
+        echo "manage_my_process started"
+        ;;
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            kill "$(cat $PID_FILE)"
+            rm -f "$PID_FILE"
+            echo "manage_my_process stopped"
+        else
+            echo "No PID file found. Is the process running?"
+        fi
+        ;;
+    restart)
+        if [ -f "$PID_FILE" ]; then
+            kill "$(cat $PID_FILE)"
+            rm -f "$PID_FILE"
+        fi
+        $PROCESS_SCRIPT &
+        echo $! > "$PID_FILE"
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        exit 1
+        ;;
+esac
