@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+#
+apropos -e set
