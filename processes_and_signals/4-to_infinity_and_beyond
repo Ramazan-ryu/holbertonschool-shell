@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #
-top
+top 
+sleep 2
