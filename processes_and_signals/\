@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#
+watch -n 2 "echo "To infinity and beyond""
