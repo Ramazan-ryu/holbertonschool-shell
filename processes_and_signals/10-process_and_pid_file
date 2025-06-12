@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 #
-terminator() {
-  rm /var/run/myscript.pid
-  exit
+PIDFILE="/var/run/myscript.pid"
+echo $$ > "$PIDFILE"
+cleanup_and_exit() {
+    rm -f "$PIDFILE"
+    exit 0
 }
-
-echo "$$" > /var/run/myscript.pid
-
-while true
-do
-  echo "To infinity and beyond"
-  sleep 2
-  trap 'echo "Y U no love me?!"' SIGINT
-  trap 'echo "I hate the kill command" && terminator' SIGTERM
-  trap 'terminator' SIGQUIT
+trap 'echo "I hate the kill command"; cleanup_and_exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'cleanup_and_exit' SIGQUIiT
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
 done
